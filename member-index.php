@@ -87,7 +87,7 @@ or die("There are no records to display ... \n" . mysql_error());
 <th>Số lượng</th>
 <th>Tổng cộng</th>
 <th>Ngày giao hàng</th>
-<th>Action(s)</th>
+<th>Action</th>
 </tr>
 
 <?php
@@ -99,11 +99,11 @@ echo "<td>" . $row['order_id']."</td>";
 echo '<td><a href=images/'. $row['food_photo']. ' alt="click to view full image" target="_blank"><img src=images/'. $row['food_photo']. ' width="80" height="70"></a></td>';
 echo "<td>" . $row['food_name']."</td>";
 echo "<td>" . $row['category_name']."</td>";
-echo "<td>" . $symbol['currency_symbol']. "" . $row['food_price']."</td>";
+echo "<td>" . $row['food_price']."" . $symbol['currency_symbol']. "</td>";
 echo "<td>" . $row['quantity_value']."</td>";
-echo "<td>" . $symbol['currency_symbol']. "" . $row['total']."</td>";
+echo "<td>" . $row['total']."" . $symbol['currency_symbol']. "</td>";
 echo "<td>" . $row['delivery_date']."</td>";
-echo '<td><a href="delete-order.php?id=' . $row['order_id'] . '">Cancel Order</a></td>';
+echo '<td><a href="delete-order.php?id=' . $row['order_id'] . '">Hủy</a></td>';
 echo "</tr>";
 }
 mysql_free_result($result);

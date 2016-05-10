@@ -52,7 +52,7 @@ or die("There are no records to display ... \n" . mysql_error());
   <h1>SPECIAL DEALS</h1>
   <hr>
   <p>Những ưu đãi ở bên dưới và chúng có thời hạn. Hãy quyết định ngay bây giờ!</p>
-  <h3>Note: In order to create your order, please go to Food Zone and choose Specials under categories list.</h3>
+  <h3>Chú ý: Bạn hãy vào Food Zone để đặt hàng các thức ăn đang có ưu đãi.</h3>
   <div style="border:#bd6f2f solid 1px;padding:4px 6px 2px 6px">
 <table width="850" align="center">
     <CAPTION><h3>ƯU ĐÃI ĐẶC BIỆT</h3></CAPTION>
@@ -73,7 +73,7 @@ or die("There are no records to display ... \n" . mysql_error());
                     echo "<td width='250' align='left'>" . $row['special_description']."</td>";
                     echo "<td>" . $row['special_start_date']."</td>";
                     echo "<td>" . $row['special_end_date']."</td>";
-                    echo "<td>" . $symbol['currency_symbol']. "" . $row['special_price']."</td>";
+                    echo "<td>" . $row['special_price']."" . $symbol['currency_symbol']. "</td>";
                     echo "</td>";
                     echo "</tr>";
                     }

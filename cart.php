@@ -96,7 +96,7 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
             <form name="quantityForm" id="quantityForm" method="post" action="update-quantity.php" onsubmit="return updateQuantity(this)">
                  <table width="560" align="center">
                      <tr>
-                        <td>Item ID</td>
+                        <td>Mã thức ăn</td>
                         <td><select name="item" id="item">
                             <option value="select">- select -
                             <?php 
@@ -148,7 +148,7 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
                     echo "<td>" . $row['category_name']."</td>";
                     echo "<td>" . $symbol['currency_symbol']. "" . $row['food_price']."</td>";
                     echo "<td>" . $row['quantity_value']."</td>";
-                    echo "<td>" . $symbol['currency_symbol']. "" . $row['total']."</td>";
+                    echo "<td>" . $row['total']."" . $symbol['currency_symbol']. "</td>";
                     /*
                     echo "<form>";
                     echo '<td><select name="quantity" id="quantity" onchange="getQuantity(this.value)">
@@ -175,7 +175,7 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
                 </select></td>";
                 echo "</form>";
                 */
-                echo '<td><a href="order-exec.php?id=' . $row['cart_id'] . '">Place Order</a></td>';
+                echo '<td><a href="order-exec.php?id=' . $row['cart_id'] . '">Thanh toán</a></td>';
                 echo "</tr>";
                 }
                 mysql_free_result($result);

@@ -12,6 +12,7 @@ require_once('connection/config.php');
 	
 	//Select database
 	$db = mysql_select_db(DB_DATABASE);
+     mysql_query("set names 'utf8'");
 	if(!$db) {
 		die("Unable to select database");
 	}
@@ -116,7 +117,7 @@ or die("Something is wrong ... \n" . mysql_error());
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Admin Index</title>
 <link href="stylesheets/admin_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="validation/admin.js">
@@ -126,22 +127,22 @@ or die("Something is wrong ... \n" . mysql_error());
 <div id="page">
 <div id="header">
 <h1>Administrator Control Panel</h1>
-<a href="profile.php">Profile</a> | <a href="categories.php">Categories</a> | <a href="foods.php">Foods</a> | <a href="accounts.php">Accounts</a> | <a href="orders.php">Orders</a> | <a href="reservations.php">Reservations</a> | <a href="specials.php">Specials</a> | <a href="allocation.php">Staff</a> | <a href="messages.php">Messages</a> | <a href="options.php">Options</a> | <a href="logout.php">Logout</a>
+<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 </div>
 <div id="container">
 <table width="1000" align="center" style="text-align:center">
-<CAPTION><h3>CURRENT STATUS</h3></CAPTION>
+<CAPTION><h3>TRẠNG THÁI HIỆN TẠI</h3></CAPTION>
 <tr>
-    <th>Members Registered</th>
-    <th>Orders Placed</th>
-    <th>Orders Processed</th>
-    <th>Orders Pending</th>  
-    <th>Table(s) Reserved</th>
-    <th>Table(s) Allocated</th>
-    <th>Table(s) Pending</th>
-    <th>PartyHall(s) Reserved</th>
-    <th>PartyHall(s) Allocated</th>
-    <th>PartyHall(s) Pending</th>    
+    <th>Thành viên</th>
+    <th>Đơn hàng đã đặt</th>
+    <th>Đơn hàng đã xử lý</th>
+    <th>Đơn hàng chưa xử lý</th>  
+    <th>Bàn đã đặt</th>
+    <th>Bàn đang sử dụng</th>
+    <th>Bàn chưa xử lý</th>
+    <th>Hội trường đã đặt</th>
+    <th>Hội trường đang sử dụng</th>
+    <th>Hội trường chưa xử lý</th>    
 </tr>
 
 <?php
@@ -172,11 +173,11 @@ or die("Something is wrong ... \n" . mysql_error());
 <hr>
 <form name="foodStatusForm" id="foodStatusForm" method="post" action="index.php" onsubmit="return statusValidate(this)">
     <table width="360" align="center">
-    <CAPTION><h3>CUSTOMERS' RATINGS (100%)</h3></CAPTION>
+    <CAPTION><h3>ĐÁNH GIÁ CỦA KHÁCH HÀNG (100%)</h3></CAPTION>
          <tr>
-            <td>Food</td>
+            <td>Thức ăn</td>
             <td width="168"><select name="food" id="food">
-            <option value="select">- select food -
+            <option value="select">- chọn thức ăn -
             <?php 
             //loop through food_details table rows
             while ($row=mysql_fetch_array($foods)){
@@ -184,18 +185,18 @@ or die("Something is wrong ... \n" . mysql_error());
             }
             ?>
             </select></td>
-            <td><input type="submit" name="Submit" value="Show Ratings" /></td>
+            <td><input type="submit" name="Submit" value="Hiển thị" /></td>
          </tr>
     </table>
 </form>
 <table width="900" align="center">
 <tr>
     <th></th>
-    <th>Excellent</th>
-    <th>Good</th>
-    <th>Average</th>
-    <th>Bad</th>
-    <th>Worse</th>
+    <th>Rất ngon</th>
+    <th>Ngon</th>
+    <th>Bình thường</th>
+    <th>Tệ</th>
+    <th>Quá tệ</th>
 </tr>
 
 <?php
@@ -245,7 +246,7 @@ or die("Something is wrong ... \n" . mysql_error());
 <hr>
 </div>
 <div id="footer">
-<div class="bottom_addr">&copy; 2012-2013 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
 </div>
 </div>
 </body>

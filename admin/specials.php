@@ -12,6 +12,7 @@ require_once('connection/config.php');
 	
 	//Select database
 	$db = mysql_select_db(DB_DATABASE);
+    mysql_query("set names 'utf8'");
 	if(!$db) {
 		die("Unable to select database");
 	}
@@ -29,7 +30,7 @@ or die("There are no records to display ... \n" . mysql_error());
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Specials</title>
 <link href="stylesheets/admin_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="validation/admin.js">
@@ -38,20 +39,20 @@ or die("There are no records to display ... \n" . mysql_error());
 <body>
 <div id="page">
 <div id="header">
-<h1>Specials Management </h1>
-<a href="index.php">Home</a> | <a href="categories.php">Categories</a> | <a href="foods.php">Foods</a> | <a href="accounts.php">Accounts</a> | <a href="orders.php">Orders</a> | <a href="reservations.php">Reservations</a> | <a href="specials.php">Specials</a> | <a href="allocation.php">Staff</a> | <a href="messages.php">Messages</a> | <a href="options.php">Options</a> | <a href="logout.php">Logout</a>
+<h1>QUẢN LÝ ƯU ĐÃI</h1>
+<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 </div>
 <div id="container">
 <table width="850" align="center">
-<CAPTION><h3>MANAGE PROMOTIONS</h3></CAPTION>
+<CAPTION><h3>QUẢN LÝ ƯU ĐÃI</h3></CAPTION>
 <form name="specialsForm" id="specialsForm" action="specials-exec.php" method="post" enctype="multipart/form-data" onsubmit="return specialsValidate(this)">
 <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Start Date</th>
-    <th>End Date</th>
-    <th>Photo</th>
+    <th>Tên</th>
+    <th>Miêu tả</th>
+    <th>Giá</th>
+    <th>Ngày bắt đầu</th>
+    <th>Ngày kết thúc</th>
+    <th>Hình ảnh</th>
     <th>Action</th>
 </tr>
 <tr>
@@ -67,14 +68,14 @@ or die("There are no records to display ... \n" . mysql_error());
 </table>
 <hr>
 <table width="950" align="center">
-<CAPTION><h3>PROMOTIONS LIST</h3></CAPTION>
+<CAPTION><h3>DANH SÁCH ƯU ĐÃI</h3></CAPTION>
 <tr>
-<th>Promo Photo</th>
-<th>Promo Name</th>
-<th>Promo Description</th>
-<th>Promo Price</th>
-<th>Start Date</th>
-<th>End Date</th>
+<th>Hình ảnh</th>
+<th>Tên</th>
+<th>Miêu tả</th>
+<th>Giá</th>
+<th>Ngày bắt đầu</th>
+<th>Ngày kết thúc</th>
 <th>Action(s)</th>
 </tr>
 
@@ -89,7 +90,7 @@ echo "<td width='180' align='left'>" . $row['special_description']."</td>";
 echo "<td>" . $symbol['currency_symbol']. "" . $row['special_price']."</td>";
 echo "<td>" . $row['special_start_date']."</td>";
 echo "<td>" . $row['special_end_date']."</td>";
-echo '<td><a href="delete-special.php?id=' . $row['special_id'] . '">Remove Promo</a></td>';
+echo '<td><a href="delete-special.php?id=' . $row['special_id'] . '">Xóa ưu đãi</a></td>';
 echo "</tr>";
 }
 mysql_free_result($result);
@@ -99,7 +100,7 @@ mysql_close($link);
 <hr>
 </div>
 <div id="footer">
-<div class="bottom_addr">&copy; 2012-2013 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
 </div>
 </div>
 </body>

@@ -119,8 +119,8 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
                     echo "<td>" . $row['food_name']."</td>";
                     echo "<td>" . $row['food_description']."</td>";
                     echo "<td>" . $row['category_name']."</td>";
-                    echo "<td>" . $symbol['currency_symbol']. "" . $row['food_price']."</td>";
-                    echo '<td><a href="cart-exec.php?id=' . $row['food_id'] . '">Add To Cart</a></td>';
+                    echo "<td>" . $row['food_price']."" . $symbol['currency_symbol']. "</td>";
+                    echo '<td><a href="cart-exec.php?id=' . $row['food_id'] . '">Đặt</a></td>';
                     echo "</td>";
                     echo "</tr>";
                     }      

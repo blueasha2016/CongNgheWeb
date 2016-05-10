@@ -15,6 +15,7 @@
     
     //Select database
     $db = mysql_select_db(DB_DATABASE);
+    mysql_query("set names 'utf8'");
     if(!$db) {
         die("Unable to select database");
     }

@@ -12,6 +12,7 @@ require_once('connection/config.php');
 	
 	//Select database
 	$db = mysql_select_db(DB_DATABASE);
+  mysql_query("set names 'utf8'");
 	if(!$db) {
 		die("Unable to select database");
 	}
@@ -45,7 +46,7 @@ require_once('connection/config.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Staff</title>
 <link href="stylesheets/admin_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="validation/admin.js">
@@ -54,17 +55,17 @@ require_once('connection/config.php');
 <body>
 <div id="page">
 <div id="header">
-<h1>Staff Allocation </h1>
-<a href="index.php">Home</a> | <a href="categories.php">Categories</a> | <a href="foods.php">Foods</a> | <a href="accounts.php">Accounts</a> | <a href="orders.php">Orders</a> | <a href="reservations.php">Reservations</a> | <a href="specials.php">Specials</a> | <a href="allocation.php">Staff</a> | <a href="messages.php">Messages</a> | <a href="options.php">Options</a> | <a href="logout.php">Logout</a>
+<h1>Phân Bổ Nhân Viên</h1>
+<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 </div>
 <div id="container">
 <table border="0" width="600" align="center">
-<CAPTION><h3>STAFF LIST</h3></CAPTION>
+<CAPTION><h3>DANH SÁCH NHÂN VIÊN</h3></CAPTION>
 <tr>
-<th>Staff ID</th>
-<th>First Name</th>
-<th>Last Name</th>
-<th>Street Address</th>
+<th>Mã số</th>
+<th>Họ</th>
+<th>Tên</th>
+<th>Địa chỉ</th>
 </tr>
 
 <?php
@@ -75,7 +76,7 @@ echo "<td>" . $row['StaffID']."</td>";
 echo "<td>" . $row['firstname']."</td>";
 echo "<td>" . $row['lastname']."</td>";
 echo "<td>" . $row['Street_Address']."</td>";
-echo '<td><a href="delete-staff.php?id=' . $row['StaffID'] . '">Remove Staff</a></td>';
+echo '<td><a href="delete-staff.php?id=' . $row['StaffID'] . '">Xóa nhân viên</a></td>';
 echo "</tr>";
 }
 mysql_free_result($staff);
@@ -88,14 +89,14 @@ mysql_close($link);
 <form id="ordersAllocationForm" name="ordersAllocationForm" method="post" action="orders-allocation.php" onsubmit="return ordersAllocationValidate(this)">
 <td>
   <table width="350" border="0" cellpadding="2" cellspacing="0">
-  <CAPTION><h3>ORDERS ALLOCATION</h3></CAPTION>
+  <CAPTION><h3>PHÂN BỔ ĐƠN HÀNG</h3></CAPTION>
 	<tr>
-		<td colspan="2" style="text-align:center;"><font color="#FF0000">* </font>Required fields</td>
+		<td colspan="2" style="text-align:center;"><font color="#FF0000">* </font>Miền bắt buộc</td>
 	</tr>
     <tr>
-      <th width="124">Order ID</th>
+      <th width="124">Mã số Đơn hàng</th>
       <td width="168"><font color="#FF0000">* </font><select name="orderid" id="orderid">
-        <option value="select">- select one option -
+        <option value="select">- chọn 1 thể loại -
         <?php 
         //loop through orders_details table rows
         while ($row=mysql_fetch_array($orders)){
@@ -105,9 +106,9 @@ mysql_close($link);
         </select></td>
     </tr>
     <tr>
-      <th>Staff ID</th>
+      <th>Mã số Nhân viên</th>
       <td><font color="#FF0000">* </font><select name="staffid" id="staffid">
-        <option value="select">- select one option -
+        <option value="select">- chọn 1 thể loại -
         <?php 
         //loop through staff table rows
         while ($row=mysql_fetch_array($staff_1)){
@@ -118,7 +119,7 @@ mysql_close($link);
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="Submit" value="Allocate Staff" /></td>
+      <td><input type="submit" name="Submit" value="Phân Bổ Nhân Viên" /></td>
     </tr>
   </table>
 </td>
@@ -126,14 +127,14 @@ mysql_close($link);
 <td>
 <form id="reservationsAllocationForm" name="reservationsAllocationForm" method="post" action="reservations-allocation.php" onsubmit="return reservationsAllocationValidate(this)">
   <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
-  <CAPTION><h3>RESERVATIONS ALLOCATION</h3></CAPTION>
+  <CAPTION><h3>BỐ TRÍ VIỆC ĐẶT CHỔ</h3></CAPTION>
 	<tr>
-		<td colspan="2" style="text-align:center;"><font color="#FF0000">* </font>Required fields</td>
+		<td colspan="2" style="text-align:center;"><font color="#FF0000">* </font>Miền bắt buộc</td>
 	</tr>
     <tr>
-      <th>Reservation ID </th>
+      <th>Mã số Đặt bàn</th>
       <td><font color="#FF0000">* </font><select name="reservationid" id="reservationid">
-        <option value="select">- select one option -
+        <option value="select">- chọn 1 thể loại -
         <?php 
         //loop through reservations_details table rows
         while ($row=mysql_fetch_array($reservations)){
@@ -143,9 +144,9 @@ mysql_close($link);
         </select></td>
     </tr>
 	<tr>
-      <th>Staff ID </th>
+      <th>Mã số Nhân viên </th>
       <td><font color="#FF0000">* </font><select name="staffid" id="staffid">
-        <option value="select">- select one option -
+        <option value="select">- chọn 1 thể loại -
         <?php 
         //loop through staff table rows
         while ($row=mysql_fetch_array($staff_2)){
@@ -156,7 +157,7 @@ mysql_close($link);
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="Submit" value="Allocate Staff" /></td>
+      <td><input type="submit" name="Submit" value="Phân Bổ Nhân Viên" /></td>
     </tr>
   </table>
 </td>
@@ -167,7 +168,7 @@ mysql_close($link);
 <hr>
 </div>
 <div id="footer">
-<div class="bottom_addr">&copy; 2012-2013 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
 </div>
 </div>
 </body>

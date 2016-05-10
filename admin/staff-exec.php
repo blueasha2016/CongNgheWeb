@@ -13,6 +13,7 @@
 	
 	//Select database
 	$db = mysql_select_db(DB_DATABASE);
+	mysql_query("set names 'utf8'");
 	if(!$db) {
 		die("Unable to select database");
 	}
@@ -39,7 +40,8 @@
 	
 	//Check whether the query was successful or not
 	if($result) {
-		echo "<html><script language='JavaScript'>alert('Staff information added successifully.')</script></html>";
+		echo "<html><script language='JavaScript'>alert('Staff information added successifully.');
+		location.replace(\"profile.php\");</script></html>";
 		exit();
 	}else {
 		die("Adding staff information failed ... " . mysql_error());
