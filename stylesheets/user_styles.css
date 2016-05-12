@@ -195,8 +195,9 @@ text-align:center;
 
 #header{ 
 width:1000px; 
-background:url(../images/head-img.jpg) no-repeat; height:276px;
+background:url(../images/2.jpg) no-repeat; height:276px;
 background-size: cover;
+border: 1px solid #bd6f2f ;
 }
 
 #company_name {

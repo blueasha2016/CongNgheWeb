@@ -41,10 +41,12 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
             return mysql_real_escape_string($str);
         }
         //get category id
+        $search = clean($_POST['search']);
         $id = clean($_POST['category']);
+        if($id == 0) $id = "";
         
         //selecting all records from the food_details and categories tables based on category id. Return an error if there are no records in the table
-        $result=mysql_query("SELECT * FROM food_details,categories WHERE food_category='$id' AND food_details.food_category=categories.category_id ")
+        $result=mysql_query("SELECT * FROM food_details,categories WHERE food_category LIKE '%$id%' AND (food_name LIKE'%$search%' OR food_description LIKE '%$search%') AND food_details.food_category=categories.category_id ")
         or die("A problem has occured ... \n" . "Our team is working on it at the moment ... \n" . "Please check back after few hours."); 
     }
 ?>
@@ -77,10 +79,11 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
  <h1>MỜI BẠN CHỌN THỨC ĂN</h1>
  <hr>
  <h3>Bạn hãy chọn danh mục bên dưới để nhanh chóng tìm được thức ăn mong muốn:</h3>
- <form name="categoryForm" id="categoryForm" method="post" action="foodzone.php" onsubmit="return categoriesValidate(this)">
+ <form name="categoryForm" id="categoryForm" method="post" action="foodzone.php" >
+ <!-- onsubmit="return categoriesValidate(this)" -->
      <table width="360" align="center">
      <tr>
-        <td>Danh mục</td>
+        <td><input type="text" name="search" value="" placeholder="Mời nhập..."></td>
         <td width="168"><select name="category" id="category">
         <option value="select">- chọn danh mục -
         <?php 
@@ -107,7 +110,7 @@ or die("A problem has occured ... \n" . "Our team is working on it at the moment
         <?php
             $count = mysql_num_rows($result);
             if(isset($_POST['Submit']) && $count < 1){
-                echo "<html><script language='JavaScript'>alert('There are no foods under the selected category at the moment. Please check back later.')</script></html>";
+                echo "<html><script language='JavaScript'>alert('Không tìm thấy thức ăn nào trong thể loại này, bạn hãy quay lại sau.')</script></html>";
             }
             else{
                 //loop through all table rows

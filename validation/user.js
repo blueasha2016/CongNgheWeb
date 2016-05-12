@@ -6,16 +6,16 @@ var errorMessage="";
 
 if (loginForm.login.value=="")
 {
-errorMessage+="Email not filled!\n";
+errorMessage+="Bạn chưa điền Email!\n";
 validationVerified=false;
 }
 if(loginForm.password.value=="")
 {
-errorMessage+="Password not filled!\n";
+errorMessage+="Bạn chưa điền Mật khẩu!\n";
 validationVerified=false;
 }
 if (!isValidEmail(loginForm.login.value)) {
-errorMessage+="Invalid email address provided!\n";
+errorMessage+="Sai địa chỉ Email!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -33,46 +33,46 @@ var errorMessage="";
 
 if (registerForm.fname.value=="")
 {
-errorMessage+="Firstname not filled!\n";
+errorMessage+="Bạn chưa điền Họ!\n";
 validationVerified=false;
 }
 if(registerForm.lname.value=="")
 {
-errorMessage+="Lastname not filled!\n";
+errorMessage+="Bạn chưa điền Tên!\n";
 validationVerified=false;
 }
 if (registerForm.login.value=="")
 {
-errorMessage+="Email not filled!\n";
+errorMessage+="Bạn chưa điền Email!\n";
 validationVerified=false;
 }
 if(registerForm.password.value=="")
 {
-errorMessage+="Password not provided!\n";
+errorMessage+="Bạn chưa điền Mật khẩu!\n";
 validationVerified=false;
 }
 if(registerForm.cpassword.value=="")
 {
-errorMessage+="Confirm password not filled!\n";
+errorMessage+="Bạn chưa điền Nhập lại mật khẩu!\n";
 validationVerified=false;
 }
 if(registerForm.cpassword.value!=registerForm.password.value)
 {
-errorMessage+="Password and Confirm Password do not match!\n";
+errorMessage+="Mật khẩu và Nhập lại mật khẩu không khớp!\n";
 validationVerified=false;
 }
 if (!isValidEmail(registerForm.login.value)) {
-errorMessage+="Invalid email address provided!\n";
+errorMessage+="Sai địa chỉ Email!\n";
 validationVerified=false;
 }
 if(registerForm.question.selectedIndex==0)
 {
-errorMessage+="Question not selected!\n";
+errorMessage+="Bạn chưa chọn câu hỏi!\n";
 validationVerified=false;
 }
 if(registerForm.answer.value=="")
 {
-errorMessage+="Answer not filled!\n";
+errorMessage+="Bạn chưa điền câu trả lời!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -117,11 +117,11 @@ var errorMessage="";
 
 if (resetForm.email.value=="")
 {
-errorMessage+="Please enter your account email! We need your email in order to reset your password.\n";
+errorMessage+="Yêu cầu bạn cung cấp Email đăng ký tài khoản để chúng tôi giúp bạn reset mật khẩu\n";
 validationVerified=false;
 }
 if (!isValidEmail(resetForm.email.value)) {
-errorMessage+="Invalid email address provided!\n";
+errorMessage+="Sai địa chỉ Email!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -138,19 +138,19 @@ var validationVerified=true;
 var errorMessage="";
 
 if (resetForm.answer.value==""){
-errorMessage+="Please enter your security answer to your provided security question.\n";
+errorMessage+="Bạn hãy điền câu trả lời cho câu hỏi bảo mật của bạn lúc đăng ký tài khoản.\n";
 validationVerified=false;
 }
 if (resetForm.new_password.value==""){
-errorMessage+="New Password not set!\n";
+errorMessage+="Bạn chưa điền Mật khẩu mới!\n";
 validationVerified=false;
 }
 if (resetForm.confirm_new_password.value==""){
-errorMessage+="Confirm New Password not set!\n";
+errorMessage+="bạn chưa điền Xác nhận mật khẩu!\n";
 validationVerified=false;
 }
 if (resetForm.new_password.value!=resetForm.confirm_new_password.value){
-errorMessage+="New Password and Confirm New Password do not match!\n";
+errorMessage+="Mật khẩu mới và Xác nhận mật khẩu không khớp!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -166,7 +166,7 @@ function getProductTotal(field) {
     var form = field.form;
 	if (field.value == "") field.value = 0;
 	if ( !isPosInt(field.value) ) {
-        var msg = 'Please enter a positive integer for quantity.';
+        var msg = 'Hãy điền vào một số lượng hợp lý.';
         addValidationMessage(msg);
         addValidationField(field)
         displayErrorInfo( form );
@@ -185,7 +185,7 @@ function doTotals(form) {
     for (var i=0; PRODUCT_ABBRS[i]; i++) {
         var cur_field = form.elements[ PRODUCT_ABBRS[i] + "_qty" ]; 
         if ( !isPosInt(cur_field.value) ) {
-            var msg = 'Please enter a positive integer for quantity.';
+            var msg = 'Hãy điền vào một số lượng hợp lý.';
             addValidationMessage(msg);
             addValidationField(cur_field)
             displayErrorInfo( form );
@@ -203,17 +203,17 @@ var errorMessage="";
 
 if (orderForm.quantity.value=="")
 {
-errorMessage+="Please provide a quantity.\n";
+errorMessage+="Hãy cung cấp số lượng.\n";
 validationVerified=false;
 }
 if (orderForm.quantity.value==0)
 {
-errorMessage+="Please provide a quantity rather than 0.\n";
+errorMessage+="Hãy cung cấp số lượng lớn hơn 0.\n";
 validationVerified=false;
 }
 if(orderForm.total.value=="")
 {
-errorMessage+="Total has not been calculated! Please provide first the quantity.\n";
+errorMessage+="Tổng số đã không được tính toán! Vui lòng cung cấp số lượng đầu tiên.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -230,22 +230,22 @@ var errorMessage="";
 
 if (updateForm.opassword.value=="")
 {
-errorMessage+="Please provide your old password.\n";
+errorMessage+="Hãy cung cấp Mật khẩu cũ.\n";
 validationVerified=false;
 }
 if (updateForm.npassword.value=="")
 {
-errorMessage+="Please provide a new password.\n";
+errorMessage+="Hãy cung cấp Mật khẩu mới.\n";
 validationVerified=false;
 }
 if(updateForm.cpassword.value=="")
 {
-errorMessage+="Please confirm your new password.\n";
+errorMessage+="Hãy điền Nhập lại mật khẩu.\n";
 validationVerified=false;
 }
 if(updateForm.cpassword.value!=updateForm.npassword.value)
 {
-errorMessage+="Confirm Password and New Password do not match!\n";
+errorMessage+="Mật khẩu mới và Nhập lại mật khẩu không khớp!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -262,22 +262,22 @@ var errorMessage="";
 
 if (billingForm.sAddress.value=="")
 {
-errorMessage+="Please provide a street address.\n";
+errorMessage+="Hãy cung cấp địa chỉ.\n";
 validationVerified=false;
 }
 if (billingForm.box.value=="")
 {
-errorMessage+="Please provide your postal box number.\n";
+errorMessage+="Hãy cung cấp số bưu điện.\n";
 validationVerified=false;
 }
 if (billingForm.city.value=="")
 {
-errorMessage+="Please provide your city.\n";
+errorMessage+="Hãy cung cấp tên thành phố.\n";
 validationVerified=false;
 }
 if(billingForm.mNumber.value=="")
 {
-errorMessage+="Please provide your mobile number.\n";
+errorMessage+="Hãy cung cấp số điện thoại.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -295,17 +295,17 @@ var errorMessage="";
 
 if (tableForm.table.selectedIndex==0)
 {
-errorMessage+="Please select a table by its name or number.\n";
+errorMessage+="Hãy chọn một bàn theo tên hoặc số của nó.\n";
 validationVerified=false;
 }
 if (tableForm.date.value=="")
 {
-errorMessage+="Please provide a reservation date.\n";
+errorMessage+="Hãy cung cấp ngày đặt.\n";
 validationVerified=false;
 }
 if (tableForm.time.value=="")
 {
-errorMessage+="Please provide a reservation time.\n";
+errorMessage+="Hãy cung cấp thời gian đặt.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -323,17 +323,17 @@ var errorMessage="";
 
 if (partyhallForm.partyhall.selectedIndex==0)
 {
-errorMessage+="Please select a partyhall by its name or number.\n";
+errorMessage+="Hãy chọn một hội trường theo tên hoặc số của nó.\n";
 validationVerified=false;
 }
 if (partyhallForm.date.value=="")
 {
-errorMessage+="Please provide a reservation date.\n";
+errorMessage+="Hãy cung cấp ngày đặt.\n";
 validationVerified=false;
 }
 if (partyhallForm.time.value=="")
 {
-errorMessage+="Please provide a reservation time.\n";
+errorMessage+="Hãy cung cấp thời gian đặt.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -351,7 +351,7 @@ var errorMessage="";
 
 if (categoriesForm.category.selectedIndex==0)
 {
-errorMessage+="Please select a category first!\n";
+errorMessage+="Hãy chọn thể loại!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -369,12 +369,12 @@ var errorMessage="";
 
 if (quantityForm.item.selectedIndex==0)
 {
-errorMessage+="Please select an item id first!\n";
+errorMessage+="Hãy chọn một mã số!\n";
 validationVerified=false;
 }
 if (quantityForm.quantity.selectedIndex==0)
 {
-errorMessage+="Please select a quantity first!\n";
+errorMessage+="Hãy chọn một số lượng!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -392,12 +392,12 @@ var errorMessage="";
 
 if (ratingForm.food.selectedIndex==0)
 {
-errorMessage+="Please select the food. This information is necessary in order to serve you better.\n";
+errorMessage+="Vui lòng chọn các thức ăn. Thông tin này là cần thiết để phục vụ bạn tốt hơn.\n";
 validationVerified=false;
 }
 if (ratingForm.scale.selectedIndex==0)
 {
-errorMessage+="Please select the scale. This information is necessary in order to serve you better.\n";
+errorMessage+="Vui lòng chọn mức độ. Thông tin này là cần thiết để phục vụ bạn tốt hơn.\n";
 validationVerified=false;
 }
 if(!validationVerified)

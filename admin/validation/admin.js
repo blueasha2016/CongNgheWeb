@@ -6,12 +6,12 @@ var errorMessage="";
 
 if (loginForm.login.value=="")
 {
-errorMessage+="Username not filled!\n";
+errorMessage+="Bạn chưa điền Username!\n";
 validationVerified=false;
 }
 if(loginForm.password.value=="")
 {
-errorMessage+="Password not filled!\n";
+errorMessage+="Bạn chưa điền Password!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -27,22 +27,22 @@ var errorMessage="";
 
 if (updateForm.opassword.value=="")
 {
-errorMessage+="Please provide your current password.\n";
+errorMessage+="Hãy cung cấp Mật khẩu hiện tại.\n";
 validationVerified=false;
 }
 if (updateForm.npassword.value=="")
 {
-errorMessage+="Please provide a new password.\n";
+errorMessage+="Hãy nhập vào Mật khẩu mới.\n";
 validationVerified=false;
 }
 if(updateForm.cpassword.value=="")
 {
-errorMessage+="Please confirm your new password.\n";
+errorMessage+="hãy nhập vào Nhập lại mật khẩu.\n";
 validationVerified=false;
 }
 if(updateForm.cpassword.value!=updateForm.npassword.value)
 {
-errorMessage+="Confirm password and new password do not match!\n";
+errorMessage+="Mật khẩu và Nhập lại mật khẩu không khớp!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -59,22 +59,22 @@ var errorMessage="";
 
 if (staffForm.fName.value=="")
 {
-errorMessage+="Please provide the staff first name.\n";
+errorMessage+="Hãy cung cấp họ của nhân viên.\n";
 validationVerified=false;
 }
 if (staffForm.lName.value=="")
 {
-errorMessage+="Please provide the staff last name.\n";
+errorMessage+="Hãy cung cấp tên của nhân viên.\n";
 validationVerified=false;
 }
 if (staffForm.sAddress.value=="")
 {
-errorMessage+="Please provide the staff street address.\n";
+errorMessage+="Hãy cung cấp địa chỉ của nhân viên.\n";
 validationVerified=false;
 }
 if(staffForm.mobile.value=="")
 {
-errorMessage+="Please provide the staff mobile/telephone number.\n";
+errorMessage+="Hãy cung cấp số điện thoại của nhân viên.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -92,32 +92,32 @@ var errorMessage="";
 
 if (specialsForm.name.value=="")
 {
-errorMessage+="name not filled!\n";
+errorMessage+="Bạn chưa điền tên!\n";
 validationVerified=false;
 }
 if (specialsForm.description.value=="")
 {
-errorMessage+="description not filled!\n";
+errorMessage+="Bạn chưa điền miêu tả!\n";
 validationVerified=false;
 }
 if (specialsForm.price.value=="")
 {
-errorMessage+="price not filled!\n";
+errorMessage+="Bạn chưa điền giá!\n";
 validationVerified=false;
 }
 if(specialsForm.start_date.value=="")
 {
-errorMessage+="start date not filled!\n";
+errorMessage+="Bạn chưa điền ngày bắt đầu!\n";
 validationVerified=false;
 }
 if(specialsForm.end_date.value=="")
 {
-errorMessage+="end date not filled!\n";
+errorMessage+="Bạn chưa điền ngày kết thúc!\n";
 validationVerified=false;
 }
 if (specialsForm.photo.value=="")
 {
-errorMessage+="photo not selected!\n";
+errorMessage+="Bạn chưa chọn ảnh!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -135,22 +135,22 @@ var errorMessage="";
 
 if(foodsForm.name.value=="")
 {
-errorMessage+="food name not filled!\n";
+errorMessage+="Bạn chưa điền tên thức ăn!\n";
 validationVerified=false;
 }
 if(foodsForm.price.value=="")
 {
-errorMessage+="food price not filled!\n";
+errorMessage+="Bạn chưa điền giá thức ăn!\n";
 validationVerified=false;
 }
 if(foodsForm.category.selectedIndex==0)
 {
-errorMessage+="please select a food category!\n";
+errorMessage+="Hãy lựa chọn thể loại thức ăn!\n";
 validationVerified=false;
 }
 if(foodsForm.photo.value=="")
 {
-errorMessage+="food photo not selected!\n";
+errorMessage+="Bạn chưa chọn hình ảnh!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -168,12 +168,12 @@ var errorMessage="";
 
 if (categoriesForm.name.value=="")
 {
-errorMessage+="category name not filled!\n";
+errorMessage+="Bạn chưa điền tên thể loại!\n";
 validationVerified=false;
 }
 if (categoriesForm.category.selectedIndex==0)
 {
-errorMessage+="please select a category to remove.\n";
+errorMessage+="Hãy chọn một thể laoij để xóa.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -191,12 +191,12 @@ var errorMessage="";
 
 if (quantitiesForm.name.value=="")
 {
-errorMessage+="quantity value not filled!\n";
+errorMessage+="Bạn chưa điền giá trị!\n";
 validationVerified=false;
 }
 if (quantitiesForm.quantity.selectedIndex==0)
 {
-errorMessage+="please select a quantity value to remove.\n";
+errorMessage+="Hãy chọn một số lượng để xóa.\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -214,12 +214,12 @@ var errorMessage="";
 
 if (currenciesForm.name.value=="")
 {
-errorMessage+="currency/symbol not filled!\n";
+errorMessage+="Bạn chưa điền loại tiền tệ!\n";
 validationVerified=false;
 }
 if (currenciesForm.currency.selectedIndex==0)
 {
-errorMessage+="there is no currency selected!\n";
+errorMessage+="Chưa có loại tiền tệ nào được chọn!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -237,12 +237,12 @@ var errorMessage="";
 
 if (ratingsForm.name.value=="")
 {
-errorMessage+="rate level not filled!\n";
+errorMessage+="Bạn chưa điền mức độ đánh giá!\n";
 validationVerified=false;
 }
 if (ratingsForm.rating.selectedIndex==0)
 {
-errorMessage+="rate level not selected!\n";
+errorMessage+="Bạn chưa chọn mức độ đánh giá!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -260,12 +260,12 @@ var errorMessage="";
 
 if (timezonesForm.name.value=="")
 {
-errorMessage+="timezone not filled!\n";
+errorMessage+="Bạn chưa điền múi giờ!\n";
 validationVerified=false;
 }
 if (timezonesForm.timezone.selectedIndex==0)
 {
-errorMessage+="timezone not selected!\n";
+errorMessage+="Bạn chưa chọn múi giờ!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -283,12 +283,12 @@ var errorMessage="";
 
 if (tablesForm.name.value=="")
 {
-errorMessage+="table name/number not filled!\n";
+errorMessage+="Bạn chưa điền tên bàn!\n";
 validationVerified=false;
 }
 if (tablesForm.table.selectedIndex==0)
 {
-errorMessage+="table not selected!\n";
+errorMessage+="Bạn chưa chọn bàn!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -306,12 +306,12 @@ var errorMessage="";
 
 if (partyhallsForm.name.value=="")
 {
-errorMessage+="partyhall name/number not filled!\n";
+errorMessage+="Bạn chưa điền tên hội trường!\n";
 validationVerified=false;
 }
 if (partyhallsForm.partyhall.selectedIndex==0)
 {
-errorMessage+="partyhall not selected!\n";
+errorMessage+="Bạn chưa chọn hội trường!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -329,12 +329,12 @@ var errorMessage="";
 
 if (questionsForm.name.value=="")
 {
-errorMessage+="question not filled!\n";
+errorMessage+="Bạn chưa điền câu hỏi!\n";
 validationVerified=false;
 }
 if (questionsForm.question.selectedIndex==0)
 {
-errorMessage+="question not selected!\n";
+errorMessage+="Bạn chưa chọn câu hỏi!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -352,7 +352,7 @@ var errorMessage="";
 
 if (foodStatusForm.food.selectedIndex==0)
 {
-errorMessage+="food not selected!\n";
+errorMessage+="Bạn chưa chọn thức ăn!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -370,12 +370,12 @@ var errorMessage="";
 
 if (allocationForm.orderid.selectedIndex==0)
 {
-errorMessage+="Order ID not selected!\n";
+errorMessage+="Bạn chưa chọn mã đơn hàng!\n";
 validationVerified=false;
 }
 if(allocationForm.staffid.selectedIndex==0)
 {
-errorMessage+="Staff ID not selected!\n";
+errorMessage+="Bạn chưa chọn mã nhân viên!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -393,12 +393,12 @@ var errorMessage="";
 
 if (allocationForm.reservationid.selectedIndex==0)
 {
-errorMessage+="Reservation ID not selected!\n";
+errorMessage+="Bạn chưa chọn mã đặt chỗ!\n";
 validationVerified=false;
 }
 if(allocationForm.staffid.selectedIndex==0)
 {
-errorMessage+="Staff ID not selected!\n";
+errorMessage+="Bạn chưa chọn mã nhân viên!\n";
 validationVerified=false;
 }
 if(!validationVerified)
@@ -416,12 +416,12 @@ var errorMessage="";
 
 if (messageForm.subject.value=="")
 {
-errorMessage+="subject not filled!\n";
+errorMessage+="Bạn chưa điền chủ đề!\n";
 validationVerified=false;
 }
 if (messageForm.txtmessage.value=="")
 {
-errorMessage+="message box not filled!\n";
+errorMessage+="Bạn chưa điền nội dung!\n";
 validationVerified=false;
 }
 if(!validationVerified)

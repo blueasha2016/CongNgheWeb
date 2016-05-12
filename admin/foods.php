@@ -50,7 +50,7 @@ require_once('connection/config.php');
 <div id="container">
 <table width="760" align="center">
 <CAPTION><h3>THÊM MỚI MỘT THỨC ĂN</h3></CAPTION>
-<form name="foodsForm" id="foodsForm" action="foods-exec.php" method="post" enctype="multipart/form-data" onsubmit="return foodsValidate(this)">
+<form name="foodsForm" id="foodsForm" method="post" enctype="multipart/form-data" onsubmit="return foodsValidate(this)">
 <tr>
     <th>Tên</th>
     <th>Miêu tả</th>
@@ -99,7 +99,7 @@ echo "<td>" . $row['food_name']."</td>";
 echo "<td>" . $row['food_description']."</td>";
 echo "<td>" . $row['food_price']."" . $symbol['currency_symbol']. "</td>";
 echo "<td>" . $row['category_name']."</td>";
-echo '<td><a href="delete-food.php?id=' . $row['food_id'] . '">Xóa</a></td>';
+echo '<td><a href="update-food.php?id=' . $row['food_id'] . '">Sửa</a><br><a href="delete-food.php?id=' . $row['food_id'] . '">Xóa</a></td>';
 echo "</tr>";
 }
 mysql_free_result($result);

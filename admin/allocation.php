@@ -76,7 +76,7 @@ echo "<td>" . $row['StaffID']."</td>";
 echo "<td>" . $row['firstname']."</td>";
 echo "<td>" . $row['lastname']."</td>";
 echo "<td>" . $row['Street_Address']."</td>";
-echo '<td><a href="delete-staff.php?id=' . $row['StaffID'] . '">Xóa nhân viên</a></td>';
+echo '<td><a href="update-staff.php?id=' . $row['StaffID'] . '">Sửa</a> | <a href="delete-staff.php?id=' . $row['StaffID'] . '">Xóa</a></td>';
 echo "</tr>";
 }
 mysql_free_result($staff);

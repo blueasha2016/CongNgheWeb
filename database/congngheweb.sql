@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2016 at 09:25 PM
+-- Generation Time: May 12, 2016 at 07:39 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`) VALUES
-(1, 'Khai Vị'),
+(8, 'Khai Vị'),
 (9, 'Món Chay'),
 (10, 'Món Khô'),
 (11, 'Món Chính');
@@ -132,10 +132,10 @@ CREATE TABLE IF NOT EXISTS `food_details` (
 --
 
 INSERT INTO `food_details` (`food_id`, `food_name`, `food_description`, `food_price`, `food_photo`, `food_category`) VALUES
-(1, 'Bánh Huế thập cẩm', 'Vì bánh bèo được đổ theo kiểu khác, cũng kiểu Huế nhưng dày hơn, có xoáy nhẹ và đặc biệt dùng tôm tươi giã nhuyễn', 150000, 'banhhue.jpg', 1),
-(2, 'Bánh Nam Bộ thập cẩm', 'Gồm bánh it tran, bánh bột lọc và bánh đúc nước cốt dừa mặn', 150000, 'nam-bo-640x480.jpg', 1),
-(3, 'Chả giò chuối hải sản', 'Set 5 cuốn sốt mayonaise bên trong và chấm tí sốt pha tương ớt bên ngoài', 125000, 'cha-gio-chuoi-640x480.jpg', 1),
-(4, 'Chả giò tôm cua', 'Set 10 cuốn chả giò ăn kèm dưa leo và tương ớt', 120000, 'cha-gio-tom-cua-684x480.jpg', 1),
+(1, 'Bánh Huế thập cẩm', 'Vì bánh bèo được đổ theo kiểu khác, cũng kiểu Huế nhưng dày hơn, có xoáy nhẹ và đặc biệt dùng tôm tươi giã nhuyễn', 150000, 'banhhue.jpg', 8),
+(2, 'Bánh Nam Bộ thập cẩm', 'Gồm bánh it tran, bánh bột lọc và bánh đúc nước cốt dừa mặn', 150000, 'nam-bo-640x480.jpg', 8),
+(3, 'Chả giò chuối hải sản', 'Set 5 cuốn sốt mayonaise bên trong và chấm tí sốt pha tương ớt bên ngoài', 125000, 'cha-gio-chuoi-640x480.jpg', 8),
+(4, 'Chả giò tôm cua', 'Set 10 cuốn chả giò ăn kèm dưa leo và tương ớt', 120000, 'cha-gio-tom-cua-684x480.jpg', 8),
 (5, 'Cà ri chay', 'Cà ri chay, kèo kẹo, sốt hơi sệt nhẹ nhờ chất bột tứa ra từ khoai laing& khoai môn thêm cà tím, ba rô, nấm rơm, tàu hủ ki, thế thôi mà thành món ngon tuyệt, chấm tí muối ớt thì hóa ra nồng nàn sự đời, chẳng nhớ là đang ăn chay nữa (vì Gánh tin có nhiều người giống Gánh, ăn cà ri gà cũng chỉ ăn tuyền nước với rau củ, mê đắm nhất là khoai lang thôi, chẳng thiết đến gà, thì đây, cà ri chay nhà Gánh đây, chấm bánh mì cũng ngon mà ăn kèm bún& giá, húng lủi càng ngon)', 230000, 'ca-ri-chay.jpg', 9),
 (6, 'Kiểm chay', 'Chỉ nấu vào các này rằm', 150000, 'kiem-chay.jpg', 9),
 (7, 'Lẩu chay', '1 lẩu lớn 4-5 người dùng', 250000, 'lau-nam-chay.jpg', 9),
@@ -148,7 +148,7 @@ INSERT INTO `food_details` (`food_id`, `food_name`, `food_description`, `food_pr
 (14, 'Bún thịt nướng chả giò', 'Nem truyền thống kết hợp với một chút đặc biệt của nhà hàng sẽ đem đến một khẩu vị tuyệt vời', 250000, 'bun-thit-nuong-cha-gio-nem-lui-280x180.jpg', 10),
 (15, 'Cơm chiên cá mặn gà xé', 'Đầy đủ dưỡng chất, âm dương hội tụ', 350000, 'com-chien-ca-man-280x180.jpg', 10),
 (16, 'Cơm chiên Dương Châu', 'Dương Châu tàu khựa', 250000, 'com-chien-duong-chau-280x180.jpg', 10),
-(17, 'Chè khúc bạch thập cẩm', 'Giải nhiệt cơ thể một cách nhanh chóng đông thời đây cũng là món ăn bổ dưỡng', 35000, 'khuc-bach-tc.jpg', 1),
+(17, 'Chè khúc bạch thập cẩm', 'Giải nhiệt cơ thể một cách nhanh chóng đông thời đây cũng là món ăn bổ dưỡng', 35000, 'khuc-bach-tc.jpg', 8),
 (18, 'Hạt điều ngào mạch nha', 'Hạt điều bùi kết hợp vị ngọt mát của mạch nha sẽ là món ngon sau bữa ăn chính', 200000, 'hat-dieu-ngao-mach-nha-nuoc-mam.jpg', 10);
 
 -- --------------------------------------------------------
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `question_id` int(5) NOT NULL,
   `answer` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`member_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `members`
@@ -174,7 +174,8 @@ CREATE TABLE IF NOT EXISTS `members` (
 
 INSERT INTO `members` (`member_id`, `firstname`, `lastname`, `login`, `passwd`, `question_id`, `answer`) VALUES
 (2, 'Đỗ Cường', 'Đạt', 'cuongdat@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '7e16036a55664f22e6511e460ee09d4f'),
-(3, 'Nguyễn Hoàng', 'Quân', 'hoangquan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '7e16036a55664f22e6511e460ee09d4f');
+(3, 'Nguyễn Hoàng', 'Quân', 'hoangquan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '7e16036a55664f22e6511e460ee09d4f'),
+(4, 'Nguyễn Nhữ', 'Hoàng', 'nhuhoang@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2, '17ef6ccd6d3c5f5d576d99e606c0950e');
 
 -- --------------------------------------------------------
 
