@@ -4,19 +4,7 @@
 <?php
 //checking connection and connecting to a database
 require_once('connection/config.php');
-//Connect to mysql server
-    $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-    if(!$link) {
-        die('Failed to connect to server: ' . mysql_error());
-    }
-    
-    //Select database
-    $db = mysql_select_db(DB_DATABASE);
-    mysql_query("set names 'utf8'");
-    if(!$db) {
-        die("Unable to select database");
-    }
-    
+
 //retrive categories from the categories table
 $categories=mysql_query("SELECT * FROM categories")
 or die("There are no records to display ... \n" . mysql_error()); 
@@ -70,7 +58,7 @@ or die("Something is wrong ... \n" . mysql_error());
 <div id="page">
 <div id="header">
 <h1>Tùy Chỉnh</h1>
-<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
+<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn/hội trường</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 <div id="container">
 <table align="center" width="910">
 <CAPTION><h3>QUẢN LÝ THỂ LOẠI</h3></CAPTION>

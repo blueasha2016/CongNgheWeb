@@ -4,18 +4,7 @@
 <?php
 //checking connection and connecting to a database
 require_once('connection/config.php');
-//Connect to mysql server
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-	if(!$link) {
-		die('Failed to connect to server: ' . mysql_error());
-	}
-	
-	//Select database
-	$db = mysql_select_db(DB_DATABASE);
-  mysql_query("set names 'utf8'");
-	if(!$db) {
-		die("Unable to select database");
-	}
+
     
     //selecting all records from the staff table. Return an error if there are no records in the tables
     $staff=mysql_query("SELECT * FROM staff")
@@ -56,7 +45,7 @@ require_once('connection/config.php');
 <div id="page">
 <div id="header">
 <h1>Phân Bổ Nhân Viên</h1>
-<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
+<a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn/hội trường</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 </div>
 <div id="container">
 <table border="0" width="600" align="center">
@@ -132,7 +121,7 @@ mysql_close($link);
 		<td colspan="2" style="text-align:center;"><font color="#FF0000">* </font>Miền bắt buộc</td>
 	</tr>
     <tr>
-      <th>Mã số Đặt bàn</th>
+      <th>Mã số Đặt chổ</th>
       <td><font color="#FF0000">* </font><select name="reservationid" id="reservationid">
         <option value="select">- chọn 1 thể loại -
         <?php 
