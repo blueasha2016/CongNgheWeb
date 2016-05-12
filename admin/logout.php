@@ -22,7 +22,7 @@
 <h4 align="center" class="err">Bạn đã đăng xuất.</h4>
 <p align="center"><a href="login-form.php">Nhấn vào đây</a> để đăng nhập lại</p>
 <div id="footer">
-<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr"><a href="index.php" title="">VỀ TRANG CHỦ</a></div>
 </div>
 </div>
 </body>

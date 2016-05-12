@@ -34,7 +34,7 @@ or die("There are no records to display ... \n" . mysql_error());
 <body>
 <div id="page">
 <div id="header">
-<h1>quản lý đăt chổ</h1>
+<h1>Quản lý đăt chổ</h1>
 <a href="profile.php">Thông tin cá nhân</a> | <a href="categories.php">Thể loại</a> | <a href="foods.php">Thức ăn</a> | <a href="accounts.php">Tài khoản</a> | <a href="orders.php">Đơn hàng</a> | <a href="reservations.php">Đặt bàn</a> | <a href="specials.php">Ưu đãi</a> | <a href="allocation.php">Nhân viên</a> | <a href="messages.php">Tin nhắn</a> | <a href="options.php">Tùy chỉnh</a> | <a href="logout.php">Đăng xuất</a>
 </div>
 <div id="container">
@@ -100,7 +100,7 @@ mysql_close($link);
 <hr>
 </div>
 <div id="footer">
-<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr"><a href="index.php" title="">VỀ TRANG CHỦ</a></div>
 </div>
 </div>
 </body>

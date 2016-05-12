@@ -119,7 +119,7 @@ require_once('connection/config.php');
 <hr>
 </div>
 <div id="footer">
-<div class="bottom_addr">&copy; 2015-2016 Food Plaza. All Rights Reserved</div>
+<div class="bottom_addr"><a href="index.php" title="">VỀ TRANG CHỦ</a></div>
 </div>
 </div>
 </body>
